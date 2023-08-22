@@ -1,0 +1,126 @@
+body {
+  max-width: 100vw;
+}
+
+main {
+  max-width: 100vw;
+  background: #11233C !important;
+  min-height: 100vh;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto";
+}
+
+.fixed-width {
+  min-width: 100vw;
+  overflow: hidden;
+}
+
+.fixed-height {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#border-left {
+  max-height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+}
+
+#tribal {
+  opacity: 0.25;
+  z-index: 4;
+  left: 0;
+  position: fixed;
+}
+
+#people-walking {
+  z-index: 5;
+  position: fixed;
+  height: 35%;
+  bottom: 0;
+}
+
+#guide {
+  position: absolute;
+  z-index: 10000000;
+  display: none;
+  max-height: 100vh;
+  width: 100vw;
+}
+
+.inside-padding {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  z-index: 1000000;
+}
+
+.inside-box {
+  width: 85%;
+  height: 100%;
+  margin: auto;
+}
+
+#main-content {
+  display: flex;
+  position: relative;
+  height: 100vh;
+}
+
+.inner-container {
+  width: 50%;
+  height: 100%;
+  outline: 5px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#container-left {
+  justify-items: left;
+}
+
+.container-text-box {
+  margin-top: -20%;
+}
+
+#mySurvey {
+  text-align: left;
+  color: white;
+  font-family: "PT Mono", "sans-serif";
+  font-size: 60px;
+}
+#mySurvey img {
+  margin-left: -10px;
+  height: 60px;
+  display: inline;
+  filter: invert(65%) sepia(20%) saturate(4282%) hue-rotate(164deg) brightness(99%) contrast(88%);
+}
+
+#survey-description {
+  text-align: left !important;
+  font-size: 25px;
+  color: white;
+  width: 90%;
+}
+
+.outline {
+  outline: 3px solid red;
+}
+
+.novis {
+  display: none;
+}
+
+.vis {
+  display: block !important;
+}
+
+/*# sourceMappingURL=main.css.map */

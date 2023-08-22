@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <!-- <link href="https://allfont.net/allfont.css?fonts=pt-mono" rel="stylesheet" type="text/css" /> -->
+   <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="assets/css/main.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Survey Form</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <main>
+    <img src="" id="border-left" />
+    <img src="assets/img/TribalBackgroundOverlay.png" id="tribal" class="fixed-width fixed-height"/>
+    <img src="assets/img/BorderLeftAquaTransparent.png" id="border-left" class="fixed-height" />
+    <img src="assets/img/guide.png" id="guide" clas="novis"/>
+    <div class="inside-padding">
+      <div class="inside-box">
+        <img src="assets/img/PeopleWalking.svg" id="people-walking"/>
+        <div id="main-content">
+          <div class="inner-container outline" id="#container-left">
+            
+            <span class="container-text-box">
+              <h2 id="mySurvey">
+                mySurvey
+                <img src="assets/img/FreeCodeCampLogo.svg" />
+              </h2>
+  
+              <p id="survey-description">
+                Lorem ipsum is placeholder text commonly used in the graphic, print, and 
+  publishing industries for
+              </p>
+            </span>
+
+          </div>
+          <div class="inner-container outline" id="#container-right"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</body>
+
+
+<script>
+
+let visible = true;
+document.addEventListener("keydown", function(event) {
+  if (event.key === "g" || event.key === "G") {
+    let guide = document.getElementById("guide")
+    if (visible) {
+      console.log("none")
+      guide.classList.add("novis")
+      guide.classList.remove("vis")
+      visible = false;
+    } else {
+      guide.classList.remove("novis")
+      guide.classList.add("vis")
+      visible = true;
+    }
+  }
+});
+
+</script>
+</html>
