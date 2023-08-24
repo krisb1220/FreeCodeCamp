@@ -19,48 +19,81 @@
     }
   });
 
+
+  function click(qy, fn) {
+    return document.querySelector(qy).addEventListener("click", fn(e));
+  }
+
+
+
+
   let currentElement = document.querySelector("span[data-color='red']")
+  const rangeInput = document.getElementById("range")
+  rangeInput.value = 0 //reset slider to 0 otherwise it goes to 50. dumb, I know
+  rangeInput.dataset.color = "red";
 
-  document.getElementById("range").value = 0 //reset slider to 0 otherwise it goes to 50. dumb, I know
-
-  let changeActiveElement = function(color) {
+  let changeActiveElement = function(color, e) {
     currentElement.classList.remove("slider-active");
+    currentElement.classList.add("slider-inactive");
     currentElement = document.querySelector(`span[data-color='${color}']`);
+    rangeInput.dataset.color=color;
     currentElement.classList.remove("slider-inactive");
     currentElement.classList.add("slider-active");
+    // document.querySelector("#range[data-color='red']::-webkit-slider-thumb").style.transform=(`rotate(${e}deg)`)
   }
 
   document.getElementById("range").addEventListener("input", (e)=>{
     
-    let val = e.target.value;
-    let valRed = val - 0;
-    let valOrange = val - 25;
-    let valYellow = val - 50;
-    let valGreen = val - 75;
-    let valArr = [valRed, valOrange, valYellow, valGreen];
+    let deg = 45;
+    const val = e.target.value;
+    const valRed = val - 0;
+    const valOrange = val - 25;
+    const valYellow = val - 50;
+    const valGreen = val - 75;
+    const valArr = [valRed, valOrange, valYellow, valGreen];
 
 
 
     if(valArr[0] > 0) {
-      changeActiveElement("red");
+      changeActiveElement("red",val+deg);
     } 
 
     if(valArr[1] > 0) {
-      changeActiveElement("orange")
+      changeActiveElement("orange", val+deg)
     } 
 
     if(valArr[2] > 0) {
-      changeActiveElement("yellow")
+      changeActiveElement("yellow", val+deg)
     } 
 
     if(valArr[3] > 0) {
-      changeActiveElement("green")
+      changeActiveElement("green",val+deg)
     } 
 
   })
 
 
+  document.getElementById("range").addEventListener("input", (e)=>{
+    const val = e.target.value;
+    document.querySelector("#output").innerText  = val;
+    // document.querySelector("#output").style["margin-left"]  = val + "%";
+    // document.querySelector("#output").style["display"]  = "inline-block";
+  })
 
+
+  document.getElementById("button-1").addEventListener("click", (e)=>{
+    e.preventDefault();
+    document.getElementById("main-form").classList.add("pop-out")
+    document.getElementById("second-form").classList.add("pop-in")
+
+  });
+
+  document.getElementById("random").addEventListener("click", (e)=>{
+    const root = document.querySelector(':root');
+    console.dir(root.style);
+// // set css variable
+      root.style.setProperty('--primary', 'blue');
+  })
 
 })()
 
